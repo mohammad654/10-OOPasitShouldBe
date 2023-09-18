@@ -1,0 +1,72 @@
+A constructor is a special type of member function that is called automatically when an object is created.
+Parameterized Constructor: a constructor with parameters is known as a parameterized constructor. This is the preferred method to initialize member data.
+A constructor is primarily used to initialize objects. They are also used to run a default code when an object is created.
+Class members means any variable or function inside the class is called "Member".
+Every Object has it's own space in memory that holds only Data Members.
+Function Members are shared to all objects in memory and has one space for them.
+Properties are Functions allow you to Update Private Members inside the class.
+Properties are two functions one for Setting Data and One for getting Data.
+In normal terms Encapsulation is defined as wrapping up of data and information under a single unit. In Object Oriented Programming, Encapsulation is defined as binding together the data and the functions that manipulates them.
+In simple terms, abstraction “displays” only the relevant attributes of objects and “hides” the unnecessary details.
+tilde (~) This is destructor will be called when object is destroyed.
+Destructor is an instance member function which is invoked automatically whenever an object is going to be destroyed. Meaning, a destructor is the last function that is going to be called before an object is destroyed.
+The destructor is only one way to destroy the object create by constructor. Hence destructor can-not be overloaded.
+Static Member is a variable that is shared for all objects, any object modifies it it get modified for all other objects.
+Static members are on the class level not for each object.
+Static Functions can be called at class level without a need to have an object.
+Inheritance: Inheritance is one in which a new class is created that inherits the properties of the already exist class. It supports the concept of code reusability and reduces the length of the code in object-oriented programming.
+The class that inherits properties from another class is called Subclass or Derived Class
+The class whose properties are inherited by a subclass is called Base Class or Superclass.
+Derived Class and Sub Class are the same.
+Base Class and Super Class are the same
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
