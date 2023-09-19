@@ -1,116 +1,175 @@
-#include <bits/stdc++.h>
+
+#include <iostream>
+#include "clsString.h"
 using namespace std;
-#include<iomanip>// this library stored the std::setw
+int main()
 
-#define DBG ios_base::sync_with_stdio(0), cin.tie(0),cout.tie(0);
+{
+    clsString String1;
 
-class clsEmployee {
-private:
-    int _ID;
-    string _PHONE;
-    string _FIRSTNAME;
-    string _LASTNAME;
-    string _EMAIL;
-    string _TITLE;
-    string _Department;
-    double _Salary;
 
-public:
-    clsEmployee( int ID,string FIRSTNAME,string LASTNAME,string title ,string EMAIL,string PHONE,double salary , string department ){
-        _ID = ID;
-        _FIRSTNAME=FIRSTNAME;
-        _LASTNAME=LASTNAME;
-        _EMAIL=EMAIL;
-        _PHONE=PHONE;
-        _TITLE = title;
-        _Salary = salary;
-        _Department = department;
-    }
-    // ==================SET FUN======================
-    void setFIRSTNAME(string FIRSTNAME){
-        _FIRSTNAME =FIRSTNAME;
-    }
-    void setLASTNAME(string LASTNAME){
-        _LASTNAME =LASTNAME;
-    }
-    void setEMAIL(string EMAIL){
-        _EMAIL =EMAIL;
-    }
-    void setPHONE(string PHONE){
-        _PHONE =PHONE;
-    }
-    void setTITLE(string TITLE){
-        _TITLE =TITLE;
-    }
-    void setDepartment(string Department){
-        _Department =Department;
-    }
-    void setSalary(double Salary){
-        _Salary =Salary;
-    }
-    // ==================GET FUN======================
-    int ID (){
-        return _ID;
-    }
-    string FIRSTNAME(){
-        return _FIRSTNAME;
-    }
-    string LASTNAME(){
-        return _LASTNAME;
-    }
-    string FULLNAME(){
-        return _FIRSTNAME+" "+_LASTNAME;
-    }
-    string EMAIL(){
-        return _EMAIL;
-    }
-    string PHONE(){
-        return _PHONE;
-    }
-    string TITLE(){
-        return _TITLE;
-    }
-    string Department(){
-        return _Department;
-    }
-    double Salary(){
-        return   _Salary;
-    }
-    // ==================prop FUN======================
-    void PrintInfo()
+    clsString String2 ("Mohammed");
+    String1.SetValue("Ali Ahmed");
+
+    cout << "String1 = " << String1.GetValue() << endl;
+    cout << "String2 = " << String2.GetValue() << endl;
+
+    cout << "Number of words: " << String1.CountWords() <<endl;
+    cout << "Number of words: " << String1.CountWords("Fadi ahmed rateb omer") << endl;
+
+    cout << "Number of words: " <<clsString::CountWords("Mohammad ali shikhi") << endl;
+
+    //----------------
+    clsString String3("hi how are you?");
+
+    cout << "String 3 = " << String3.GetValue() << endl;
+
+    cout << "String Length = " <<String3.Length() << endl;
+
+    String3.UpperFirstLetterOfEachWord();
+    cout << String3.GetValue() << endl;
+
+    //----------------
+
+    String3.LowerFirstLetterOfEachWord();
+    cout << String3.GetValue() << endl;
+
+    //----------------
+
+    String3.UpperAllString();
+    cout << String3.GetValue() << endl;
+
+    //----------------
+
+    String3.LowerAllString();
+    cout << String3.GetValue() << endl;
+
+    //----------------
+
+    cout << "After inverting a : "
+        << clsString::InvertLetterCase('a') << endl;
+
+    //----------------
+
+    String3.SetValue("AbCdEfg");
+
+    String3.InvertAllLettersCase();
+    cout << String3.GetValue() << endl;
+
+    String3.InvertAllLettersCase();
+    cout << String3.GetValue() << endl;
+
+    //----------------
+
+    cout<<"Capital Letters count : "
+        <<clsString::CountLetters("Mohammad Ali Shikhi",clsString::CapitalLetters)<< endl<<endl;
+
+    //----------------
+
+    String3.SetValue("Welcome to Jordan");
+    cout << String3.GetValue() << endl;
+
+    cout << "Capital Letters count :" << String3.CountCapitalLetters() << endl;
+
+    //----------------
+
+    cout << "Small Letters count :" << String3.CountSmallLetters() << endl;
+
+    //----------------
+
+    cout << "vowels count :" << String3.CountVowels() << endl;
+
+    //----------------
+
+    cout << "letter E count :" << String3.CountSpecificLetter('E',false) << endl;
+
+    //----------------
+
+    cout << "is letter u vowel? " << clsString::IsVowel('a')
+         << endl;
+
+    //----------------
+
+    cout << "Words Count" << String3.CountWords()
+        << endl;
+
+    //----------------
+
+
+    vector<string> vString;
+
+    vString = String3.Split(" ");
+
+    cout << "\nTokens = " << vString.size() << endl;
+
+    for (string& s : vString)
     {
-        cout << "\nInfo!\n";
-        cout << "____________________________________________" << endl;
-        cout << "ID\t\t:" << _ID << endl;
-        cout << "First Name\t:" << _FIRSTNAME << endl;
-        cout << "Last Name\t:" << _LASTNAME << endl;
-        cout << "Full Name\t:" << FULLNAME() << endl;
-        cout << "Title\t\t:" << _TITLE << endl;
-        cout << "Email\t\t:" << _EMAIL << endl;
-        cout << "Phone\t\t:" << _PHONE << endl;
-        cout << "Department\t:" << _Department << endl;
-        cout << "Salary\t\t:" << _Salary << endl;
-        cout << "____________________________________________" << endl;
+        cout << s << endl;
     }
-    void SendEmail(string Subject , string Body ){
-        cout << "The following message sent successfully to email: " << _EMAIL << endl;
-        cout << "subject: " << Subject << endl;
-        cout << "Body: " << Body << endl<<endl;
-    }
-    void SendSMS (string Message) {
-        cout << "The following SMS sent successfully to phone: " << _PHONE << endl;
-        cout <<  Message <<endl;
 
-    }
+    //----------------
+
+    //Tirms
+    String3.SetValue(  "    Mohammed Ali     ");
+    cout << "\nString     = " << String3.GetValue();
+
+    String3.SetValue( "    Mohammed Ali     ");
+    String3.TrimLeft();
+    cout << "\n\nTrim Left  = " << String3.GetValue();
+
+    //----------------
+
+    String3.SetValue(  "    Mohammed Ali     ");
+    String3.TrimRight();
+    cout << "\nTrim Right = " << String3.GetValue()<<endl;
+
+    //----------------
+
+    String3.SetValue(  "    Mohammed Ali     ");
+    String3.Trim();
+    cout << "\nTrim       = " << String3.GetValue();
+
+    //----------------
+
+    //Joins
+    vector<string> vString1 = { "Mohammed","Faid","Ali","Maher" };
+
+    cout << "\n\nJoin String From Vector: \n";
+    cout << clsString::JoinString(vString1, " ");
+
+
+    string arrString[] = { "Mohammed","Faid","Ali","Maher" };
+
+    cout << "\n\nJoin String From array: \n";
+    cout << clsString::JoinString(arrString, 4, " ");
+
+    //----------------
+
+
+     String3.SetValue("Mohammed Ali");
+    cout << "\n\nString     = " << String3.GetValue();
+
+    String3.ReverseWordsInString();
+    cout << "\nReverse Words : " << String3.GetValue()
+        << endl;
+
+    //---------------
+
+      String3.SetValue("Mohammed Ali");
+    cout << "\nReplace : " << String3.ReplaceWord("Mohammed", "Mo")
+        << endl;
+
+    //---------------
+
+    String3.SetValue("This is: a sample text, with punctuations.");
+    cout << "\n\nString     = " << String3.GetValue();
+
+    String3.RemovePunctuations();
+    cout << "\nRemove Punctuations : " << String3.GetValue()
+        << endl;
+
+    //---------------
+    system("pause>0");
+    return 0;
 };
 
-
-int main() {
-    DBG
-
-    clsEmployee Employee1 (10,"Mohammad Ali","Shikhi","devs","my@gmail.com","0098387727",15000,"Utrecht");
-    Employee1.PrintInfo();
-    Employee1.SendEmail("aa","hhhhh");
-    Employee1.SendSMS("abcd");
-    return 0;
-}

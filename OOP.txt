@@ -19,7 +19,44 @@ The class that inherits properties from another class is called Subclass or Deri
 The class whose properties are inherited by a subclass is called Base Class or Superclass.
 Derived Class and Sub Class are the same.
 Base Class and Super Class are the same
+Access modifiers (or access specifiers) are keywords in object-oriented languages that set the accessibility of classes, methods, and other members.
+Visibility Mode "Private" will make everything private in the derived class, so it can make use of it and no one will make use of it neither derived classes nor objects.
+Visibility Mode "Protected" will make everything protected in the derived class, so it can make use of it and all other derived classes will make use of it, but no objects will make use of it.
+Visibility Mode "Public" will inherit the class publicly so every public members and protected members are useful for others.
+types of Inheritance
+    Single inheritance
+    Multi-level inheritance
+    Multiple inheritance
+    Hybrid inheritance
+    Hierarchical inheritance
 
+Up Casting is converting derived object to it's base object
+A pointer of type parent can point to an object of child class.
+Static Binding: The binding which can be resolved at compile time by the compiler is known as static or early binding. The binding of all the static, private methods is done at compile-time.
+Dynamic Binding: In Dynamic binding compiler doesn’t decide the method to be called. Overriding is a perfect example of dynamic binding. In overriding both parent and child classes have the same method.
+Early Binding / Static Binding are done at the compilation time.
+Late Binding/Dynamic Binding are done at run time.
+Polymorphism allows us to create consistent code.
+Polymorphism is one of the important features/principles/concepts of OOP, word Ploy means "Many" and word Morphism means "Form" so it means "Many Forms", the ability to take more than one form.
+We can achieve Polymorphism through
+    Function Overloading
+    Operator Overloading
+    Overriding
+    Virtual Methods
+
+A pure virtual function doesn't have the function body and it must end with = 0.
+If you have one pure virtual function in a class then it will be converted to abstract class.
+Abstract Class is the same concept of Interface Class and they are both contracts.
+Abstract Class/Interface Class is a class with pure virtual functions.
+An abstract class in C++ has at least one pure virtual function by definition. In other words, a function that has no definition.
+The C++ interfaces are implemented using abstract classes and these abstract classes should not be confused with data abstraction which is a concept of keeping implementation details separate from associated data.
+A friend class can access both private and protected members of the class in which it has been declared as friend.
+The friend function is declared using the friend keyword inside the body of the class.
+By using the keyword, the ‘friend’ compiler understands that the given function is a friend function.
+Every object in C++ has access to its own address through an important pointer called this pointer.
+The this pointer is an implicit parameter to all member functions.
+Therefore, inside a member function, this may be used to refer to the invoking object.
+Friend functions do not have a this pointer, because friends are not members of a class. Only member functions/member data have a this pointer.
 
 
 
